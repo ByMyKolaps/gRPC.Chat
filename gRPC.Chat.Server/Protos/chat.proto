@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPC.Chat.Server";
+
+package chat;
+
+// The greeting service definition.
+service Messaging {
+ 
+  rpc SendMessage (stream MyMessage) returns (stream MyMessage) {}
+}
+ 
+message MyMessage {
+  string name = 1;
+  string message = 2;
+}
